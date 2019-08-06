@@ -1,0 +1,43 @@
+<ion-header class="header">
+  <ion-navbar>
+    <ion-title text-center>
+      CUADRADOS  PERFECTOS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <h6 class="description-text">Por favor ingresar el intervalo para calcular los cuadrados perfectos asociados al mismo.</h6> 
+
+  <div class="div-form" text-center>
+    <p >{{err}}</p>
+    <ion-item>
+      <ion-input type="number" [(ngModel)]='inicioFirst' (ngModelChange)="clearData()" placeholder="Valor inicial del intervalo"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input type="number" [(ngModel)]='fin' (ngModelChange)="clearData()" placeholder="Valor final del intervalo"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button class="button" outline  [disabled]=" !inicioFirst ||  !fin " (click)="start()">Calcular</button>
+  </div>
+  <br>
+  <hr>
+  <div *ngIf='perfects_squares.length != 0' class="div-result" text-center>
+    <h6>Intervalo : ({{inicioFirst}} - {{fin}})</h6>
+    <ion-row class="row-first">
+        <ion-col col-6>Posición (n)</ion-col>
+        <ion-col col-6>Sumatoria f(n)</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let i of perfects_squares" class="row-general">
+      <ion-col col-6>{{i.position}}</ion-col>
+      <ion-col col-6>{{i.sum}}</ion-col>
+    </ion-row>
+  </div>
+
+  <div class="nothing-here"  *ngIf='verify'>
+      <ion-icon name='ios-alert-outline'></ion-icon>
+      <p>No se encontraron cuadrados perfectos dentro del intervalo ({{inicioFirst}} - {{fin}}).</p>
+  </div>
+
+</ion-content>

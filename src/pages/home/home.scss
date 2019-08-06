@@ -1,0 +1,53 @@
+page-home {
+
+    .description-text{
+        text-align: justify;
+        padding: 10px;
+        color: #696a74;
+    }
+
+
+    .div-form{
+        p{
+            color: color($colors-md,danger);
+        }
+
+        padding: 10px 10px 10px 0px;
+        margin: 10px;
+        border: solid 1px #ada6a6;
+        border-radius: 5px;
+    }
+
+    .div-result{
+        margin: 10px;
+    }
+
+    .row-first{
+        background-color: #424242;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .row-general{
+        background-color: color($colors-md,secondary);
+    }
+
+    .nothing-here{
+		color:#999;
+		padding:0px;
+		text-align:center;
+		ion-icon{
+			margin-top:10px;
+			font-size:36px;
+		}
+		p{
+			font-style:italic;
+			margin-top:5px;
+            font-weight:300;
+            font-size: 15px;
+		}
+    }
+
+
+}
